@@ -1,0 +1,108 @@
+SELECT * FROM 
+"weather"."mv_forecast_rainfall_%forecast_date%"
+
+
+^[\w\d\s-]+$
+
+
+2024-03-06
+
+
+forecast_date
+
+
+imd_forecast_for_date_temperature
+
+
+
+imd_forecast_for_date_rainfall
+
+
+
+
+
+Temperature CSS
+
+
+/* @title taluka */
+{
+    stroke: #000000;
+    stroke-width: 1;
+    fill: #FFFFFF;
+    /*label: [thnname];
+    label-anchor: 0.5 0.5;*/
+}
+
+/* @title class recode */
+{
+  fill: [    
+    recode(property(env('forecast_for', 'temp_max_class')),
+        1,'#ccffff', 2,'#ffff33',
+        3,'#ffc266', 4,'#ff3333')
+        ];
+}
+
+
+/* @title class recode */
+{
+  fill: [    
+    recode(property(env('forecast_for', 'temp_min_class')),
+        1,'#ccffff', 2,'#ffff33',
+        3,'#ffc266', 4,'#ff3333')
+        ];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+Rainfall
+
+
+
+
+/* @title taluka */
+{
+    stroke: #000000;
+    stroke-width: 1;
+    fill: #FFFFFF;
+    /*label: [thnname];
+    label-anchor: 0.5 0.5;*/
+}
+
+/* @title class recode */
+{
+  fill: [    
+    recode(property(env('forecast_for', 'rainfall_class')),
+        1,'#fcf988', 2,'#CCCCFF',
+        3,'#69d9ff', 4,'#005670')
+        ];
+}
+
+
+
+
+inspection_date >= '2023-12-08' AND inspection_date <= '2024-03-06' AND 
+
+intensity_value>= 1 AND 
+
+pest_name ='AMERICAN, SPOTTED AND PINK BOLLWORM' AND crop_name='Cotton'
+
+
+
+
+
+
+inspection_date >= '2023-07-01' AND inspection_date <= '2024-03-06' AND
+
+intensity_value >= 12.5 AND intensity_value <= 24.99 AND intensity_value >= 25 AND 
+ 
+pest_name ='PHEROMONE TRAP' AND crop_name='Cotton'
