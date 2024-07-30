@@ -1,0 +1,27 @@
+/* @title taluka */
+* {
+    stroke: #000000;
+    stroke-width: 1;
+    fill: #FFFFFF;
+	/*label: [thnname];
+	label-anchor: 0.5 0.5;*/
+}
+
+/* @title class recode */
+* {
+  fill: [    
+	recode(property(env('forecast_for', 'temp_max_class')),
+		1,'#ccffff', 2,'#ffff33',
+		3,'#ffc266', 4,'#ff3333')
+		];
+}
+
+
+/* @title class recode */
+* {
+  fill: [    
+	recode(property(env('forecast_for', 'temp_min_class')),
+		1,'#ccffff', 2,'#ffff33',
+		3,'#ffc266', 4,'#ff3333')
+		];
+}
