@@ -1,0 +1,17 @@
+/* @title taluka */
+* {
+    stroke: #000000;
+    stroke-width: 1;
+    fill: #FFFFFF;
+	/*label: [thnname];
+	label-anchor: 0.5 0.5;*/
+}
+
+/* @title class recode */
+* {
+  fill: [    
+	recode(property(env('forecast_for', 'rainfall_class')),
+		1,'#fcf988', 2,'#CCCCFF',
+		3,'#69d9ff', 4,'#005670')
+		];
+}
